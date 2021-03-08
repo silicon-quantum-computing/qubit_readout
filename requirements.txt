@@ -1,0 +1,6 @@
+functools
+math
+numpy>=1.19.2
+operator
+scipy>=1.5.0
+signal
