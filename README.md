@@ -47,8 +47,7 @@ qubit_readout.benchmarking.fidelity.stc_fidelity( out_time_excited, out_time_gro
 ```
 
 Similarly, the ER fidelity can also be determined from the qubit state characteristic transition times, experimental parameters, and a readout time (optimised or not). Instead of finding the optimised threshold for electrical readout the ER fidelity is calculated for a range of normalised thresholds that span the range between two mean signal levels (corresponding to the two possible spin/charge states).
-The optimisations for both processes (STC and ER) are done with respect to the readout visibility ($V_{STC/ER}$) which is defined as the sum of the qubit state fidelities ($F^{0}_{STC}$ and $F^{1}_{STC}$, or $F^{0}_{ER}$ and $F^{1}_{ER}$ ), for a given process, minus one i.e.
-* $V_{STC} = F^{0}_{STC} + F^{1}_{STC} - 1$.
+The optimisations for both processes (STC and ER) are done with respect to the readout visibility.
 
 ```python
 import qubit_readout
@@ -72,17 +71,4 @@ qubit_readout.benchmarking.fidelity.er_fidelity( out_time_excited, out_time_grou
 #    - the index at which the optimal visbility occurs
 ```
 
-The overall readout fidelity $F_M$ can then be determined from the STC and ER fidelities as
-* $F_M = \frac{F_0 + F_1}{2}$,
-
-where
-* $F_0 = F^0_{STC}F^0_{ER} + (1 - F^0_{STC})(1 - F^1_{ER})$, and
-* $F_1 = F^1_{STC}F^1_{ER} + (1 - F^1_{STC})(1 - F^0_{ER})$.
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+The overall readout fidelity can then be determined from the STC and ER fidelities as outlined in our work linked above.
